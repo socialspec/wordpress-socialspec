@@ -25,7 +25,7 @@ echo '<?xml version="1.0" encoding="' . \esc_attr( \get_bloginfo( 'charset' ) ) 
 	<script xmlns="http://www.w3.org/1999/xhtml" src="<?php echo \htmlspecialchars( $socialspec_src, ENT_XML1 | ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.EnqueuedResources.NonEnqueuedScript -- Escaped for XML, registered in Following. ?>" defer=""/>
 <?php endforeach; ?>
 	<head>
-		<title><?php echo \esc_xml( \sprintf( /* translators: %s: Site title. */ \__( '%s Follows', 'socialspec' ), \get_bloginfo( 'name' ) ) ); ?></title>
+		<title><?php echo \esc_xml( \sprintf( /* translators: %s: Site title. */ \__( '%s: Recommended feeds', 'socialspec' ), \get_bloginfo( 'name' ) ) ); ?></title>
 		<ownerId><?php echo \esc_xml( \home_url( '/' ) ); ?></ownerId>
 		<docs>http://opml.org/spec2.opml</docs>
 <?php

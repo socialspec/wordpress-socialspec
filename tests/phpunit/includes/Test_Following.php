@@ -70,7 +70,7 @@ class Test_Following extends \WP_UnitTestCase {
 
 		$this->assertNotFalse( $xml, 'The OPML is well-formed XML.' );
 		$this->assertSame( '2.0', (string) $xml['version'] );
-		$this->assertSame( 'Jordan & Co Follows', (string) $xml->head->title );
+		$this->assertSame( 'Jordan & Co: Recommended feeds', (string) $xml->head->title );
 		$this->assertCount( 3, $xml->body->outline );
 
 		$first = $xml->body->outline[0];

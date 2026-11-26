@@ -97,9 +97,6 @@ class Test_Socialspec extends \WP_UnitTestCase {
 	 * @covers ::query_vars
 	 */
 	public function test_routing() {
-		// Serving the document would exit.
-		\remove_action( 'parse_request', array( Socialspec::class, 'parse_request' ) );
-
 		$this->set_permalink_structure( '/%postname%/' );
 
 		$this->go_to( \home_url( '/.well-known/contact.vcf' ) );
@@ -114,8 +111,6 @@ class Test_Socialspec extends \WP_UnitTestCase {
 
 		$this->go_to( \home_url( '/.well-known/about.md/extra' ) );
 		$this->assertSame( '', \get_query_var( 'well-known' ) );
-
-		\add_action( 'parse_request', array( Socialspec::class, 'parse_request' ) );
 	}
 
 	/**
